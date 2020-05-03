@@ -1,0 +1,43 @@
+{
+    "name": "Fedium",
+    "version": "1.0",
+    "description": "Automatically opens the paid blog into incognito mode",
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "page_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/fed_16.png",
+            "32": "images/fed_32.png",
+            "48": "images/fed_48.png",
+            "128": "images/fed_128.png"
+        }
+    },
+    "icons": {
+        "16": "images/fed_16.png",
+        "32": "images/fed_32.png",
+        "48": "images/fed_48.png",
+        "128": "images/fed_128.png"
+    },
+    "permissions": [
+        "activeTab",
+        "declarativeContent",
+        "storage"
+    ],
+    "options_page": "options.html",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "manifest_version": 2
+}
